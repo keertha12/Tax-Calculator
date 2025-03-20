@@ -15,7 +15,8 @@ def calculate_tax(age, income, regime):
             previous_slab = slab
         else:
             tax += (income - previous_slab) * rate
-            break
+            previous_slab = income
+
 
     # Apply rebate under Section 87A (if income <= ₹7,00,000 in Old Regime or ₹5,00,000 in New Regime)
     if regime == "Old Regime (FY 2024-25)" and income <= 700000:
