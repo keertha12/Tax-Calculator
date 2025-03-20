@@ -15,10 +15,8 @@ def calculate_tax(age, income, regime):
             tax = income * 0.15
         elif income <= 1500000:
             tax = income * 0.2
-        else:   
-            tax = income * 0.3
-
-    else:  # New Regime (FY 2025-26)
+                    
+            tax = income * 0.3# New Regime (FY 2025-26)
         if income <= 400000:
             tax = 0
         elif income <= 800000:
