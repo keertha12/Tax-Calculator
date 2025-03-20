@@ -15,8 +15,10 @@ def calculate_tax(age, income, regime):
             tax = income * 0.15
         elif income <= 1500000:
             tax = income * 0.2
-                    
-            tax = income * 0.3# New Regime (FY 2025-26)
+        else:
+            tax = income * 0.3
+
+    elif regime == "New Regime (FY 2025-26)":
         if income <= 400000:
             tax = 0
         elif income <= 800000:
@@ -39,7 +41,7 @@ def calculate_tax(age, income, regime):
         tax = 0
 
     # Add cess (4%)
-    tax = tax + (tax * 0.04)
+    tax += tax * 0.04
 
     return round(tax, 2)
 
@@ -111,17 +113,6 @@ def main():
                 st.markdown("- Deduct business expenses like office rent, utilities, and salaries.")
                 st.markdown("- Use Presumptive Taxation Scheme for small businesses.")
                 st.markdown("- Depreciation on business assets can be claimed as a deduction.")
-                else:
-                st.markdown("## New Regime Tax Slabs")
-                st.table([
-                    ["0 - ₹4,00,000", "0%"],
-                    ["₹4,00,001 - ₹8,00,000", "5%"],
-                    ["₹8,00,001 - ₹12,00,000", "10%"],
-                    ["₹12,00,001 - ₹16,00,000", "15%"],
-                    ["₹16,00,001 - ₹20,00,000", "20%"],
-                    ["₹20,00,001 - ₹24,00,000", "25%"],
-                    ["Above ₹24,00,000", "30%"]
-                ])
 
 if __name__ == "__main__":
     main()
