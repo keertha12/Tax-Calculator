@@ -32,11 +32,11 @@ def calculate_tax(age, income, regime):
 def main():
     st.title("Indian Income Tax Calculator")
 
-    name = st.text_input("Enter your Name:")
-    age = st.number_input("Enter your Age:", min_value=18, max_value=100)
-    occupation = st.selectbox("Select your Occupation Type:", ["", "Salaried", "Self-Employed", "Business Owner"], index=0)
-    annual_income = st.number_input("Enter your Annual Package (in INR):", min_value=100000)
-    regime = st.radio("Choose Tax Regime:", ["Old Regime (FY 2024-25)", "New Regime (FY 2025-26)"])
+    name = st.text_input("Enter your Name:", value="")
+    age = st.number_input("Enter your Age:", min_value=18, max_value=100, value=None)
+    occupation = st.selectbox("Select your Occupation Type:", ["", "Salaried", "Self-Employed", "Business Owner"], index=None)
+    annual_income = st.number_input("Enter your Annual Package (in INR):", min_value=100000, value=None)
+    regime = st.radio("Choose Tax Regime:", ["Old Regime (FY 2024-25)", "New Regime (FY 2025-26)"], index=None)
 
     if st.button("Calculate Tax"):
         if not age or not annual_income or regime is None:
