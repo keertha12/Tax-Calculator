@@ -9,17 +9,20 @@ def calculate_tax(age, income, regime):
         slabs = [(400000, 0), (800000, 0.05), (1200000, 0.1), (1600000, 0.15), (2000000, 0.2), (2400000, 0.25), (float('inf'), 0.3)]
 
     previous_slab = 0
-    for slab, rate in slabs:
-        if income > slab:
-            tax += (slab - previous_slab) * rate
-            previous_slab = slab
-        else:
-            tax += (income - previous_slab) * rate
-            break
+    highest_slab_rate = 0
+for slab, rate in slabs:
+    if income > slab:
+        highest_slab_rate = rate
+    else:
+        break
+
+# Direct tax calculation based on highest slab
+tax = income * highest_slab_rate
 
     # Handle income above ₹15L in the Old Regime
     if regime == "Old Regime (FY 2024-25)" and income > 1500000:
         tax += (income - 1500000) * 0.30
+        previous_slab = 1500000
 
 
     # Apply rebate under Section 87A (if income <= ₹7,00,000 in Old Regime or ₹5,00,000 in New Regime)
