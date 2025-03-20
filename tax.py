@@ -112,7 +112,7 @@ def main():
                 st.markdown("### ✅ Tax-Saving Tips for Business Owners")
                 st.markdown("- Deduct business expenses like office rent, utilities, and salaries.")
                 st.markdown("- Use Presumptive Taxation Scheme for small businesses.")
-                st.markdown("- Depreciation on business assets can be claimed as a deduction.")            else:
+                st.markdown("- Depreciation on business assets can be claimed as a deduction.")else:
                 st.markdown("## New Regime Tax Slabs")
                 st.table([
                     ["0 - ₹4,00,000", "0%"],
