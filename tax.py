@@ -45,6 +45,66 @@ def main():
             tax = calculate_tax(age, annual_income, regime)
             st.success(f"Hey {name}, based on your details, your total tax liability is ₹{tax}")
 
+if regime == "Old Regime (FY 2024-25)":
+    st.markdown("## How to Reduce Your Tax Liability")
+
+    st.markdown("### ✅ Section 80C – Investments (Max ₹1.5L per year)")
+    st.markdown("- **PPF** – Interest earned is tax-free; lock-in period of 15 years.")
+    st.markdown("- **EPF** – Contribution to EPF is eligible for deduction; interest is tax-free up to certain limits.")
+    st.markdown("- **ELSS** – Tax-saving mutual funds with a 3-year lock-in period; potential for high returns.")
+    st.markdown("- **NSC** – Interest is taxable but reinvested, qualifying for 80C deduction.")
+    st.markdown("- **Sukanya Samriddhi Yojana (SSY)** – For girl children; interest is tax-free; limit up to ₹1.5 lakh.")
+    st.markdown("- **Life Insurance Premiums** – Premiums paid for life insurance policies are deductible under 80C.")
+
+    st.markdown("### ✅ Section 80D – Health Insurance Premiums (Max ₹1L per year)")
+    st.markdown("- Self, spouse, children – ₹25,000 per year")
+    st.markdown("- Parents below 60 years – ₹25,000")
+    st.markdown("- Parents above 60 years – ₹50,000")
+
+    st.markdown("### ✅ Section 80E – Education Loan Interest")
+    st.markdown("- Interest on education loans is 100% deductible for up to 8 years.")
+
+    st.markdown("### ✅ Section 24(b) – Home Loan Interest (Max ₹2L per year)")
+    st.markdown("- Up to ₹2 lakh deduction on home loan interest (self-occupied property).")
+
+    st.markdown("### ✅ Section 10(14) – House Rent Allowance (HRA)")
+    st.markdown("- Deduction based on actual HRA received, rent paid, and city of residence.")
+
+    st.markdown("### ✅ Section 80CCD(1B) – National Pension Scheme (NPS) (Max ₹50K)")
+    st.markdown("- Additional ₹50,000 deduction on top of Section 80C for NPS contributions.")
+
+    st.markdown("### ✅ Section 80G – Donations to Charitable Organizations")
+    st.markdown("- 50% to 100% of donations to certain government-notified charities are deductible.")
+
+    st.markdown("### ✅ Section 80TTA/80TTB – Interest on Savings Account")
+    st.markdown("- Up to ₹10,000 deduction for savings interest (below 60).")
+    st.markdown("- Up to ₹50,000 deduction for senior citizens (on savings, FDs, RDs).")
+
+    st.markdown("### ✅ Section 54 – Capital Gains Exemption")
+    st.markdown("- Reinvest capital gains into property or bonds to avoid tax.")
+
+    st.markdown("### ✅ Tax-Saving Tips for Business Owners")
+    st.markdown("- Deduct business expenses like office rent, utilities, and salaries.")
+    st.markdown("- Use Presumptive Taxation Scheme for small businesses.")
+    st.markdown("- Depreciation on business assets can be claimed as a deduction.")
+
+else:
+    st.markdown("## New Regime Tax Slabs")
+    st.table([
+        ["0 - ₹4,00,000", "0%"],
+        ["₹4,00,001 - ₹8,00,000", "5%"],
+        ["₹8,00,001 - ₹12,00,000", "10%"],
+        ["₹12,00,001 - ₹16,00,000", "15%"],
+        ["₹16,00,001 - ₹20,00,000", "20%"],
+        ["₹20,00,001 - ₹24,00,000", "25%"],
+        ["Above ₹24,00,000", "30%"]
+    ])
+st.markdown("- Deduct business expenses like office rent, utilities, and salaries.")
+
+st.markdown("- Use Presumptive Taxation Scheme for small businesses.")
+
+st.markdown("- Depreciation on business assets can be claimed as a deduction.")
+
             if regime == "Old Regime (FY 2024-25)":
                 st.markdown("### Old Regime Tax Slabs:")
                 st.table([
